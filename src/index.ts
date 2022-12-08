@@ -11,10 +11,18 @@ mongoose.connect(process.env.Database_Url!, () => {
     console.log("Database connected");
 })
 
+import indexRouter from './routes/index';
+import usersRouter from './routes/users';
 
 const app = express();
 
+
 app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 const port = 5000;
 

@@ -8,16 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const http_status_1 = __importDefault(require("http-status"));
-const router = express_1.default.Router();
-router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.status(http_status_1.default.OK).json({
-        message: "Hello World"
-    });
-}));
-exports.default = router;
+exports.registerUser = void 0;
+const registerUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+});
+exports.registerUser = registerUser;

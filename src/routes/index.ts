@@ -3,9 +3,12 @@ import httpStatus from "http-status";
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     res.status(httpStatus.OK).json({
         message: "Hello World"
     })
 })
+
+
+export default router;
 

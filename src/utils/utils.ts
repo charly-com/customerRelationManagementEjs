@@ -30,8 +30,6 @@ export const usersLoginSchema = Joi.object({
         .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$'))
         .required(),
 
-    confirm_password: Joi.ref('password'),
-
     access_token: Joi.string(),
 
 })
@@ -43,7 +41,7 @@ export const usersLoginSchema = Joi.object({
 //       .required(),
 //   });
 
-export const generateToken = function(_id: string){
+export const generateToken = (_id: string)=>{
     if(process.env.JWT_SECRET ){
         return jwt.sign({_id}, process.env.JWT_SECRET, {
           expiresIn: '30d',
